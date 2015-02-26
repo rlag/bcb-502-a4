@@ -1,0 +1,95 @@
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script language="javascript" src="nwunsch.js"></script>
+
+<style type="text/css">
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+    text-align: center;
+    position: center;
+}
+h1 {
+    font-weight: 300;
+    font-size: 14pt;
+}
+.fixed {
+	font-family: 'Source Sans Pro', monospace;
+	font-size: 16.5px;	
+	white-space: nowrap;
+	text-align: left;
+}
+.matrix {
+	font-family: 'Source Sans Pro', monospace;
+	font-size: 16px;	
+	word-wrap: break-word;	
+	text-align: center;
+}
+.vis {
+	font-family: 'Source Sans Pro', monospace;
+	font-size: 20px;	
+	word-wrap: break-word;
+	position: left;
+	text-align: left;
+}
+a:hover {
+    color: #9ecae1;
+}
+a {
+    color: black;
+    text-decoration: none;
+    color: #99d8c9;
+}
+</style>
+
+</head>
+<body>
+
+<img src="http://users.wpi.edu/~rosslagoy/match.png"/>
+<img src="http://users.wpi.edu/~rosslagoy/close.png"/>
+
+<h1><b>Needleman-Wunsch Sequence Alignment Visualization</b></h1>
+
+<p>Enter penalty parameters and any two sequences (DNA or protein):</p>
+
+<p>
+<i>Mismatch: </i><input id="mispen" size="3" value="1" onChange="update();" 
+onKeypress="update();" oninput="update();"></input>
+
+<i>Gap: </i><input id="gappen" size="3" value="1" onChange="update();" 
+onKeypress="update();" oninput="update();"></input>
+
+<i>Skew: </i><input id="skwpen" size="3" value="1" onChange="update();" 
+onKeypress="update();" oninput="update();"></input>
+<BR><BR>
+
+<i>Sequence A: </i><textarea id="a" rows="2" cols="80" type="text" class="textboxclass" id="a" placeholder="i.e. (DNA sequence) gtgctgggcgtgctgagcggc... or (protein sequence) VLGVLSG... (wildtype)" onChange="update();" onKeypress="update();" oninput="update();"></textarea>
+<BR>
+<BR>
+<i>Sequence B: </i><textarea id="b" rows="2" cols="80" type="text" class="textboxclass" id="a" placeholder="i.e. (DNA sequence) gtgctgggcgtgctgagcggc... or (protein sequence) VLGVLSG... (mutant)" onChange="update();" onKeypress="update();" oninput="update();"></textarea><BR>
+</p>
+
+<p><a href="http://www.attotron.com/cybertory/analysis/trans.htm" target="_blank">another useful website</a> for translating and transcribing sequences</p>
+<BR>
+<h1><b>Squish Visualization</b></h1> 
+<p>good for visualizing long sequences (>1kb)</p>
+<div class="vis" id="summaryVis"></div>
+<BR>
+<h1><b>Alignment Visualization</b></h1>
+<p>good for visualizing short sequences (<1kb)</p>
+<table class="fixed" id="newA"></table><BR>
+<table class="fixed" id="newB"></table><BR>
+<table class="fixed" id="summary"></table>
+
+<!-- <BR>
+<h1><b>Matrix Visualization</b></h1>
+<table class="matrix" id="mat" cellspacing="10" border="0" valign="center">
+<tr><td>...</td></tr> -->
+
+</table>
+</body>
+</html>

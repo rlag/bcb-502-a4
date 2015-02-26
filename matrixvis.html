@@ -1,0 +1,85 @@
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script language="javascript" src="nwunsch.js"></script>
+
+<style type="text/css">
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+    text-align: center;
+    position: center;
+}
+h1 {
+    font-weight: 300;
+    font-size: 14pt;
+}
+.fixed {
+	font-family: 'Source Sans Pro', monospace;
+	font-size: 14px;	
+	word-wrap: break-word;	
+	text-align: left;
+}
+.vis {
+	font-family: 'Source Sans Pro', monospace;
+	font-size: 20px;	
+	word-wrap: break-word;
+	position: left;
+	text-align: left;
+}
+a:hover {
+    color: #9ecae1;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<img src="http://users.wpi.edu/~rosslagoy/vis/match.png"/>
+<img src="http://users.wpi.edu/~rosslagoy/vis/close.png"/>
+<h1><b>Needleman-Wunsch Sequence Alignment Visualization</b></h1>
+
+<p>
+Enter penalty parameters and any two sequences (DNA or protein):
+</p>
+
+<p>
+<i>Mismatch: </i><input id="mispen" size="3" value="1" onChange="update();" 
+onKeypress="update();" oninput="update();"></input>
+
+<i>Gap: </i><input id="gappen" size="3" value="1" onChange="update();" 
+onKeypress="update();" oninput="update();"></input>
+
+<i>Skew: </i><input id="skwpen" size="3" value="1" onChange="update();" 
+onKeypress="update();" oninput="update();"></input>
+<BR><BR>
+
+<i>Sequence A: </i><textarea id="a" rows="2" cols="80" type="text" class="textboxclass" id="a" placeholder="ATTGATCAAATC" onChange="update();" onKeypress="update();" oninput="update();"></textarea>
+<BR>
+<BR>
+<BR>
+<i>Sequence B: </i><textarea id="b" rows="2" cols="80" type="text" class="textboxclass" id="a" placeholder="ATTGATCAAATC" onChange="update();" onKeypress="update();" oninput="update();"></textarea><BR>
+</p>
+
+<h1><b>Squish Visualization</b></h1>
+<div class="vis" id="summaryVis"></div>
+
+<h1><b>Alignment Visualization</b></h1>
+<div class="fixed" id="newA"></div><BR>
+<div class="fixed" id="newB"></div><BR>
+<div class="fixed" id="summary"></div><BR>
+
+<a href="matrixvis.html"><h1><b>Matrix Visualization</b></h1></a>
+
+<!-- <table id="mat" cellspacing="20" border="0" valign="center">
+<tr><td></td></tr> -->
+
+</table>
+</body>
+</html>
